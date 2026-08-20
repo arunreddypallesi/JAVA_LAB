@@ -1,0 +1,44 @@
+interface Academics {
+    void showMarks();
+}
+
+interface Sports {
+    void showSportsMarks();
+}
+class Student implements Academics, Sports {
+    String name;
+    int marks;
+    int sportsMarks;
+
+    Student(String name, int marks, int sportsMarks) {
+        this.name = name;
+        this.marks = marks;
+        this.sportsMarks = sportsMarks;
+    }
+
+    public void showMarks() {
+        System.out.println("Academic Marks: " + marks);
+    }
+
+    public void showSportsMarks() {
+        System.out.println("Sports Marks  : " + sportsMarks);
+    }
+
+    void display() {
+        System.out.println("Student Name  : " + name);
+        showMarks();
+        showSportsMarks();
+        System.out.println("Total Marks   : " + (marks + sportsMarks));
+    }
+}
+
+public class MultipleInheritance {
+    public static void main(String[] args) {
+
+        Student s = new Student("Arun", 85, 90);
+
+        System.out.println("Student Details");
+        System.out.println("----------------");
+        s.display();
+    }
+}
